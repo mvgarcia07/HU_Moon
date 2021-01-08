@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "mycluster-2f6d"
+    labels:
+        app: "mycluster-2f6d"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      name: http
+    selector:
+        app: "mycluster-2f6d"
