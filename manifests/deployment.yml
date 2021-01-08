@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "mycluster-2f6d"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "mycluster-2f6d"
+  template:
+    metadata:
+      labels:
+        app: "mycluster-2f6d"
+    spec:
+      containers:
+        - name: "mycluster-2f6d"
+          image: "nodevops.azurecr.io/mycluster"
+          ports:
+          - containerPort: 8080
